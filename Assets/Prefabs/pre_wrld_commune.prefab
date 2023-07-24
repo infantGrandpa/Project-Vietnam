@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 7310896548758517474}
   - component: {fileID: 3927785705988658382}
   - component: {fileID: 4345079258518322598}
+  - component: {fileID: 6266478976990458650}
   m_Layer: 0
   m_Name: CommuneRadius (1)
   m_TagString: Untagged
@@ -204,6 +205,36 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.5
+--- !u!114 &6266478976990458650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7355236944050229348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efee954c69f0d421086729bb8df1137f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  uniqueID: 5609129077695427011
+  points: []
+  convex: 1
+  minBoundsHeight: 1
+  penaltyDelta: 0
+  modifyWalkability: 0
+  setWalkability: 0
+  applyOnStart: 1
+  applyOnScan: 1
+  updatePhysics: 0
+  resetPenaltyOnPhysics: 1
+  updateErosion: 1
+  modifyTag: 1
+  setTag: 2
+  legacyMode: 0
+  serializedVersion: 1
+  legacyUseWorldSpace: 0
 --- !u!1 &8876068771599453690
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +262,7 @@ Transform:
   m_GameObject: {fileID: 8876068771599453690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.32, y: 2.02, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4752734844371782569}

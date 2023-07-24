@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace ProjectVietnam
 {
@@ -23,6 +24,8 @@ namespace ProjectVietnam
         [SerializeField] Transform squadList;
         [SerializeField] GameObject squadInfoBoxPrefab;
 
+        [HideInInspector] public List<SoldierDropdownBehaviour> soldierDropdowns = new();
+
         public SquadInfoBox CreateNewSquadBox(Squad squad)
         {
             GameObject newBox = Instantiate(squadInfoBoxPrefab, squadList);
@@ -36,6 +39,17 @@ namespace ProjectVietnam
             squadInfoBox.InitializeBox(squad);
 
             return squadInfoBox;
+        }
+
+        [ContextMenu("Hide All Soldiers")]
+        public void HideAllSoldiers() {
+            foreach(SoldierDropdownBehaviour thisDropdown in soldierDropdowns) {
+                if (thisDropdown == null) {
+                    continue;
+                }
+
+                thisDropdown.HideSoldierList();
+            }
         }
     }
 }

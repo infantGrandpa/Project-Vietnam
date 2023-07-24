@@ -5,6 +5,7 @@ using System;
 
 namespace ProjectVietnam
 {
+    [RequireComponent(typeof(RectTransform))]
     public class SquadInfoBox : MonoBehaviour
     {
 
@@ -28,6 +29,8 @@ namespace ProjectVietnam
 
 
         #region Start and Destroy
+        
+
         public void InitializeBox(Squad newSqaud)
         {
             squad = newSqaud;
@@ -102,7 +105,7 @@ namespace ProjectVietnam
                 return;
             }
 
-            foreach(SquadMemberNamePlate namePlate in squadMemberNamePlates)
+            foreach (SquadMemberNamePlate namePlate in squadMemberNamePlates)
             {
                 namePlate.UpdateName();
             }

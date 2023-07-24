@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 943c2af694a7ce1418236d8e601c5764, type: 3}
   m_Color: {r: 0.05724919, g: 1, b: 0, a: 1}
   m_FlipX: 0
@@ -568,7 +568,7 @@ Transform:
   m_GameObject: {fileID: 8377101210370058967}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.33, y: 3.32, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6826393459975782546}
@@ -817,7 +817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787be9dff5b25fe41a006fa1a2214cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseWeaponRange: 10
+  baseWeaponRange: 5
   weaponBehaviour: {fileID: 1747039895847379269}
 --- !u!114 &49696040000441877
 MonoBehaviour:

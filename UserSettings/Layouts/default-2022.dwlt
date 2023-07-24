@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 350}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 90
+  controlID: 115
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 43
+  controlID: 41
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 44
+  controlID: 42
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -217,13 +217,13 @@ MonoBehaviour:
     height: 791
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 12}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 12}
   - {fileID: 14}
   - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -270,8 +270,8 @@ MonoBehaviour:
     y: 0
     width: 766
     height: 1307
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -574,7 +574,7 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
-      displayed: 1
+      displayed: 0
       snapOffset: {x: 48, y: 48}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -635,6 +635,19 @@ MonoBehaviour:
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Junction Builder
+      index: 12
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     m_OverlaysVisible: 1
   m_WindowGUID: 155b8af2ba01a7845b59c14a5ae088d1
   m_Gizmos: 1
@@ -646,9 +659,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.8508759, y: 0.4553303, z: -0.4171569}
+    m_Target: {x: -6.1937685, y: -2.2066305, z: -0.49335587}
     speed: 2
-    m_Value: {x: -1.3435916, y: 1.3083321, z: -0.43164605}
+    m_Value: {x: -5.706894, y: -1.8631921, z: -0.50838625}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -698,9 +711,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 30.749628
+    m_Target: 31.898022
     speed: 2
-    m_Value: 32.198563
+    m_Value: 33.40107
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -718,7 +731,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: 0.13949394, y: 0.08601936, z: -0.014396073, w: 0.98637474}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -762,9 +775,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 00affeff
-      m_LastClickedID: -86272
-      m_ExpandedIDs: 1059ffff82f9ffffb4f9ffffc6f9ffffe8f9ffff24faffff46faffff90faffffb2faffff0efbffff8a740000987400009c740000a0740000ac740000b2740000ce740000d4740000d8740000de740000e2740000ea740000
+      m_SelectedIDs: 8c7f0000
+      m_LastClickedID: 32652
+      m_ExpandedIDs: 1246fdfffe7f0000528000005e800000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -825,7 +838,7 @@ MonoBehaviour:
   m_SerializedViewNames: []
   m_SerializedViewValues: []
   m_PlayModeViewName: GameView
-  m_ShowGizmos: 1
+  m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
   m_TargetSize: {x: 1332, y: 749}
@@ -835,7 +848,7 @@ MonoBehaviour:
   m_EnterPlayModeBehavior: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
-  m_Gizmos: 1
+  m_Gizmos: 0
   m_Stats: 0
   m_SelectedSizes: 01000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
@@ -855,7 +868,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -965,7 +978,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Terrain
+    - Assets/Materials
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -973,16 +986,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs/Terrain
+  - Assets/Materials
   m_LastFoldersGridSize: 16
   m_LastProjectPath: F:\game-dev\serious-projects\project-vietnam\Project Vietnam
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 95}
-    m_SelectedIDs: 8ea10000
-    m_LastClickedID: 41358
-    m_ExpandedIDs: 00000000c2770000f8770000fa770000007800006078000000ca9a3bffffff7f
+    m_SelectedIDs: ac790000
+    m_LastClickedID: 31148
+    m_ExpandedIDs: 00000000bc780000b4790000d4790000d2260200d4260200d626020000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1010,7 +1023,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c2770000
+    m_ExpandedIDs: 00000000bc780000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1038,21 +1051,21 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300001e18ffff12c3000000000000e4b70000
+    m_ExpandedInstanceIDs: c62300001e18ffff12c30000e4b70000000000004c7d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: pre_ter_water
-      m_OriginalName: pre_ter_water
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 47076
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:

@@ -153,7 +153,7 @@ namespace ProjectVietnam
         [ContextMenu("Test Damage")]
         private void TestDamage()
         {
-            int damageAmount = Random.Range(50, 250);
+            int damageAmount = Random.Range(0, 0);
             Damage(damageAmount);
             DebugHelper.Log("Damaged " + squad.SquadName + " for " + damageAmount + " damage.");
         }
