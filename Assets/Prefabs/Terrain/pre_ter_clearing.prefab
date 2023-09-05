@@ -150,11 +150,11 @@ MonoBehaviour:
       corner: 1
       m_CornerMode: 1
   m_SpriteShape: {fileID: 11400000, guid: 30669ab5a88fd7b408d899eeddb3da4a, type: 2}
-  m_FillPixelPerUnit: 91.5
-  m_StretchTiling: 1
+  m_FillPixelPerUnit: 131.6
+  m_StretchTiling: 4.98
   m_SplineDetail: 16
   m_AdaptiveUV: 1
-  m_StretchUV: 0
+  m_StretchUV: 1
   m_WorldSpaceUV: 0
   m_CornerAngleThreshold: 30
   m_ColliderDetail: 16
