@@ -10,7 +10,7 @@ namespace ProjectVietnam
         private EnemyBehaviour enemyBehaviour;
         private EnemyStateBase currentState;
 
-        [SerializeField, ReadOnly] string currentStateName = "None";
+        [SerializeField, ReadOnly] string currentCommand = "None";
 
         private void Awake()
         {
@@ -21,12 +21,12 @@ namespace ProjectVietnam
 
         private void GetNewInstructions()
         {
-            EnemyCommand newCommand = EnemyStatePlanner.Instance.GetNewCommand();
+            EnemyCommand newCommand = EnemyStatePlanner.Instance.GetNewCommand(enemyBehaviour);
 
             switch (newCommand.commandType)
             {
                 case EnemyCommandType.move:
-                    DebugHelper.Log("Move State.");
+                    NewMoveState(newCommand.targetPosition);
                     break;
                 case EnemyCommandType.interact:
                     DebugHelper.Log("Interact State.");
@@ -71,7 +71,24 @@ namespace ProjectVietnam
             currentState = new EnemyIdleState(enemyBehaviour);
             currentState.EnterState();
 
-            currentStateName = "Idle";
+            currentCommand = "Idle";
+        }
+
+        private void NewMoveState(Vector3? targetPosition)
+        {
+            if (targetPosition == null)
+            {
+                DebugHelper.LogError("Target position is null.");
+                return;
+            }
+
+            EnemyGoToState moveState = new(enemyBehaviour);
+            moveState.targetPosition = (Vector3)targetPosition;
+
+            currentState = moveState;
+            currentState.EnterState();
+
+            currentCommand = "Move to " + targetPosition.ToString();
         }
 
     }

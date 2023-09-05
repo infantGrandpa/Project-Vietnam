@@ -4,6 +4,9 @@ namespace ProjectVietnam
 {
     public class EnemyGoToState : EnemyStateBase
     {
+
+        public Vector3 targetPosition;
+
         public EnemyGoToState(EnemyBehaviour newEnemyBehaviour)
         {
             enemyBehaviour = newEnemyBehaviour;
@@ -11,7 +14,7 @@ namespace ProjectVietnam
 
         public override void EnterState()
         {
-            DebugHelper.Log("Entering go to state.");
+            enemyBehaviour.SetNewDestination(targetPosition);
         }
 
         public override void ExitState()

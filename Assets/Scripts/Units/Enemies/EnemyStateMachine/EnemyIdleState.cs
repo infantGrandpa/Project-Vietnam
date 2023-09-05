@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 namespace ProjectVietnam
 {
     public class EnemyIdleState : EnemyStateBase
     {
+
         public EnemyIdleState(EnemyBehaviour newEnemyBehaviour)
         {
             enemyBehaviour = newEnemyBehaviour;
@@ -28,5 +30,6 @@ namespace ProjectVietnam
         {
             DebugHelper.Log("In idle state.");
         }
+
     }
 }
