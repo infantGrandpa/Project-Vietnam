@@ -30,5 +30,11 @@ namespace ProjectVietnam
 
             moveOrder.SetMovePosition(newPosition);
         }
+
+        public bool IsAtPosition(Vector3 targetPosition)
+        {
+            float distanceToTargetPosition = Vector3.Distance(transform.position, targetPosition);
+            return distanceToTargetPosition <= myPath.endReachedDistance;
+        }
     }
 }

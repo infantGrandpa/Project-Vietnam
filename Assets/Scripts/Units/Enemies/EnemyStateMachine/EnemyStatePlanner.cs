@@ -22,23 +22,22 @@ namespace ProjectVietnam
 
         [SerializeField] Vector3 targetTestPosition;
 
+        [Header("Patrol Orders")]
+        [SerializeField] Vector3 targetPatrolHome;
+        public float patrolRadius;
+        public float secsToPatrolBeforeNewCommand;
+
+        [Header("Testing & Debugging")]
+        [SerializeField] bool skipMoveCommand;
+
         public EnemyCommand GetNewCommand(EnemyBehaviour enemyToCommand)
         {
-            if (!IsUnitAtTargetPosition(enemyToCommand.transform))
+            if (!skipMoveCommand && !enemyToCommand.IsAtPosition(targetTestPosition))
             {
                 return CreateMoveToTestPositionCommand();
             }
 
-
-            EnemyCommand newCommand = new EnemyCommand();
-            return newCommand;
-        }
-
-        private bool IsUnitAtTargetPosition(Transform unitTransform)
-        {
-            float distanceToTargetPosition = Vector3.Distance(unitTransform.position, targetTestPosition);
-            return distanceToTargetPosition <= 3f;
-
+            return CreatePatrolCommand();
         }
 
         private EnemyCommand CreateMoveToTestPositionCommand()
@@ -47,10 +46,20 @@ namespace ProjectVietnam
             return newCommand;
         }
 
+        private EnemyCommand CreatePatrolCommand()
+        {
+            EnemyCommand newCommand = new EnemyCommand(EnemyCommandType.patrol, targetPatrolHome);
+            return newCommand;
+        }
+
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(targetTestPosition, 0.5f);
+
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(targetPatrolHome, 0.5f);
+            Gizmos.DrawWireSphere(targetPatrolHome, patrolRadius);
         }
 
     }

@@ -11,12 +11,17 @@ namespace ProjectVietnam
 
         public override void EnterState()
         {
-            DebugHelper.Log("Entering idle state.");
+            DebugHelper.Log("Entering interact state.");
         }
 
         public override void ExitState()
         {
-            DebugHelper.Log("Exiting idle state.");
+            DebugHelper.Log("Exiting interact state.");
+        }
+
+        public override bool IsEqualToCommandType(EnemyCommandType enemyCommandType)
+        {
+            return enemyCommandType == EnemyCommandType.interact;
         }
 
         public override bool IsStateComplete()
@@ -26,7 +31,7 @@ namespace ProjectVietnam
 
         public override void UpdateState()
         {
-            DebugHelper.Log("In idle state.");
+            DebugHelper.Log("In interact state.");
         }
     }
 }

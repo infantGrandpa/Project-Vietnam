@@ -5,8 +5,6 @@ namespace ProjectVietnam
     public class EnemyGoToState : EnemyStateBase
     {
 
-        public Vector3 targetPosition;
-
         public EnemyGoToState(EnemyBehaviour newEnemyBehaviour)
         {
             enemyBehaviour = newEnemyBehaviour;
@@ -20,6 +18,11 @@ namespace ProjectVietnam
         public override void ExitState()
         {
             DebugHelper.Log("Exiting go to state.");
+        }
+
+        public override bool IsEqualToCommandType(EnemyCommandType enemyCommandType)
+        {
+            return enemyCommandType == EnemyCommandType.move;
         }
 
         public override bool IsStateComplete()

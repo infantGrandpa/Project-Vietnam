@@ -9,34 +9,43 @@ namespace ProjectVietnam
     {
         private EnemyBehaviour enemyBehaviour;
         private EnemyStateBase currentState;
+        private EnemyCommand currentCommand;
 
-        [SerializeField, ReadOnly] string currentCommand = "None";
+        [SerializeField, ReadOnly] string currentCommandName = "None";
 
         private void Awake()
         {
             enemyBehaviour = GetComponent<EnemyBehaviour>();
             GetNewInstructions();
-            currentState = new EnemyIdleState(enemyBehaviour);
+            currentState = new EnemyPatrolState(enemyBehaviour);
         }
 
         private void GetNewInstructions()
         {
-            EnemyCommand newCommand = EnemyStatePlanner.Instance.GetNewCommand(enemyBehaviour);
+            currentCommand = EnemyStatePlanner.Instance.GetNewCommand(enemyBehaviour);
+            ExecuteCommand();
+        }
 
-            switch (newCommand.commandType)
+        private void ExecuteCommand()
+        {
+            if (currentCommand == null)
+            {
+                DebugHelper.LogError("Current command is null.");
+                return;
+            }
+
+            switch (currentCommand.commandType)
             {
                 case EnemyCommandType.move:
-                    NewMoveState(newCommand.targetPosition);
+                    NewMoveState(currentCommand.targetPosition);
                     break;
                 case EnemyCommandType.interact:
                     DebugHelper.Log("Interact State.");
                     break;
                 default:
-                    NewIdleState();
+                    MoveToPatrolArea();
                     break;
             }
-
-
         }
 
         private void Update()
@@ -57,38 +66,57 @@ namespace ProjectVietnam
                 return;
             }
 
+            if (!currentState.IsEqualToCommandType(currentCommand.commandType))
+            {
+                ExecuteCommand();
+                return;
+            }
+
             GetNewInstructions();
         }
 
-        private void NewIdleState()
+        private void NewPatrolState(Vector3 targetPosition)
         {
-            if (currentState?.GetType() == typeof(EnemyIdleState))
+            if (currentState?.GetType() == typeof(EnemyPatrolState))
             {
-                DebugHelper.Log("Already in idle state.");
+                DebugHelper.Log("Already in patrol state.");
                 return;
             }
 
-            currentState = new EnemyIdleState(enemyBehaviour);
+            currentState = new EnemyPatrolState(enemyBehaviour)
+            {
+                targetPosition = targetPosition
+            };
             currentState.EnterState();
 
-            currentCommand = "Idle";
+            currentCommandName = "Patrolling around " + targetPosition.ToString();
         }
 
-        private void NewMoveState(Vector3? targetPosition)
+        private void NewMoveState(Vector3 targetPosition)
         {
-            if (targetPosition == null)
+            EnemyGoToState moveState = new(enemyBehaviour)
             {
-                DebugHelper.LogError("Target position is null.");
-                return;
-            }
-
-            EnemyGoToState moveState = new(enemyBehaviour);
-            moveState.targetPosition = (Vector3)targetPosition;
+                targetPosition = targetPosition
+            };
 
             currentState = moveState;
             currentState.EnterState();
 
-            currentCommand = "Move to " + targetPosition.ToString();
+            currentCommandName = "Move to " + targetPosition.ToString();
+        }
+
+        private void MoveToPatrolArea()
+        {
+            Vector3 targetPosition = currentCommand.targetPosition;
+
+            if (!enemyBehaviour.IsAtPosition(targetPosition))
+            {
+                NewMoveState(targetPosition);
+            }
+            else
+            {
+                NewPatrolState(targetPosition);
+            }
         }
 
     }

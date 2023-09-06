@@ -4,7 +4,7 @@ namespace ProjectVietnam
 {
     public enum EnemyCommandType
     {
-        idle,
+        patrol,
         move,
         interact
     }
