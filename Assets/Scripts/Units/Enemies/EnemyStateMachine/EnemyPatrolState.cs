@@ -12,6 +12,7 @@ namespace ProjectVietnam
         private List<Vector2> patrolPoints = new();
         private List<int> validPatrolIndexes = new();
         private int lastChosenIndex = -1;
+        private readonly float fuzzyRadiusMultiplier = 1 / 3;
 
         public EnemyPatrolState(EnemyBehaviour newEnemyBehaviour)
         {
@@ -56,23 +57,35 @@ namespace ProjectVietnam
 
         private Vector3 GetPatrolPosition()
         {
-            if (lastChosenIndex != -1)
-            {
-                validPatrolIndexes.Remove(lastChosenIndex);
-            }
+            RemoveLastChosenIndexFromValidPatrols();
 
-            int randomIndex = validPatrolIndexes[Random.Range(0, validPatrolIndexes.Count)];
+            int newlyChosenIndex = GetRandomPatrolIndex();
+            Vector2 patrolDestination = ApplyPositionFuzziness(patrolPoints[newlyChosenIndex]);
 
-            Vector2 fuzzyPosition = ApplyPositionFuzziness(patrolPoints[randomIndex]);
+            RefreshValidPatrolIndexes(newlyChosenIndex);
 
+            return patrolDestination;
+        }
+
+        private void RemoveLastChosenIndexFromValidPatrols()
+        {
+            if (lastChosenIndex == -1) return;
+            validPatrolIndexes.Remove(lastChosenIndex);
+        }
+
+        private int GetRandomPatrolIndex()
+        {
+            return validPatrolIndexes[Random.Range(0, validPatrolIndexes.Count)];
+        }
+
+        private void RefreshValidPatrolIndexes(int newlyChosenIndex)
+        {
             if (lastChosenIndex != -1)
             {
                 validPatrolIndexes.Add(lastChosenIndex);
             }
 
-            lastChosenIndex = randomIndex;
-
-            return fuzzyPosition;
+            lastChosenIndex = newlyChosenIndex;
         }
 
         private void StartPatrolCountdown()
@@ -96,7 +109,6 @@ namespace ProjectVietnam
             // Southwest
             patrolPoints.Add(new Vector2(center.x - halfRadius, center.y - halfRadius));
 
-
             validPatrolIndexes = Enumerable.Range(0, patrolPoints.Count).ToList();
 
         }
@@ -104,7 +116,7 @@ namespace ProjectVietnam
         private Vector2 ApplyPositionFuzziness(Vector2 startingPosition)
         {
             Vector2 fuzzyPosition = Random.insideUnitCircle;
-            fuzzyPosition *= EnemyStatePlanner.Instance.patrolRadius / 3;
+            fuzzyPosition *= EnemyStatePlanner.Instance.patrolRadius * fuzzyRadiusMultiplier;
             fuzzyPosition += startingPosition;
 
             return fuzzyPosition;
