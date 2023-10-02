@@ -4780,11 +4780,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &994814443 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 418410007697200956, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
-  m_PrefabInstance: {fileID: 2917889718637326906}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &996565661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4955,7 +4950,7 @@ MonoBehaviour:
   targetTestPosition: {x: -5, y: 0, z: 0}
   targetPatrolHome: {x: 5, y: 10.76, z: 0}
   patrolRadius: 8
-  secsToPatrolBeforeNewCommand: 4
+  secsToPatrolBeforeNewCommand: 15
   skipMoveCommand: 1
 --- !u!1 &1157199497
 GameObject:
@@ -16489,19 +16484,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2689751431659877994, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
   m_PrefabInstance: {fileID: 2917889718637326906}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2707463822498710022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994814443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d640eb9531391d449baca8c9911890bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentCommandName: None
 --- !u!1001 &2917889718637326906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16514,6 +16496,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySquad
       objectReference: {fileID: 0}
+    - target: {fileID: 418410007697200956, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245260331638029735, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Name
+      value: Bullet Spawn Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245260331638029735, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991209130627134227, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Name
+      value: Bullet Spawn Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991209130627134227, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275004489136840117, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Name
+      value: Bullet Spawn Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275004489136840117, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2689751431659877994, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -16524,7 +16534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2689751431659877994, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.1
+      value: 6.04
       objectReference: {fileID: 0}
     - target: {fileID: 2689751431659877994, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16558,17 +16568,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3978704986617950934, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 3300539480899969992, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Name
+      value: Bullet Spawn Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300539480899969992, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814476631072677970, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Name
+      value: Bullet Spawn Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814476631072677970, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3883611249797371200, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975471728426433257, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Name
+      value: Bullet Spawn Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975471728426433257, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987041589605876960, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Name
+      value: Bullet Spawn Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987041589605876960, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393195570226223246, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 418410007697200956, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2707463822498710022}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 953b253183fcdab44b1a797e011cedbf, type: 3}
 --- !u!1001 &3230530219513046282
 PrefabInstance:

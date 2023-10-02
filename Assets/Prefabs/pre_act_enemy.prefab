@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 5251281465741794368}
   - component: {fileID: 3978704986617950934}
   - component: {fileID: 7714791802251444568}
-  m_Layer: 0
+  - component: {fileID: 3040088669756575528}
+  m_Layer: 7
   m_Name: pre_act_enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +88,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -264,7 +265,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418410007697200956}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c709c7a319649fa41b3493a12ca5fb37, type: 3}
   m_Name: 
@@ -285,6 +286,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec476d47f0114d546b5483e2677031d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3040088669756575528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418410007697200956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d640eb9531391d449baca8c9911890bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCommandName: None
 --- !u!1 &3883611249797371200
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3895632659723968507}
   - component: {fileID: 6634364487015150740}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Unit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,6 +438,66 @@ PrefabInstance:
     - target: {fileID: 3977714740990781099, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
       propertyPath: m_Name
       value: pre_weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3977714740990781099, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909071467001873282, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Name
+      value: Bullet Spawn Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909071467001873282, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407217893014703414, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Name
+      value: Bullet Spawn Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407217893014703414, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6691012151840859024, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Name
+      value: Bullet Spawn Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 6691012151840859024, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963753607018421741, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Name
+      value: Bullet Spawn Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963753607018421741, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367091820467501765, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Name
+      value: Bullet Spawn Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367091820467501765, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386413773624657100, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Name
+      value: Bullet Spawn Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386413773624657100, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621735580788448887, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Name
+      value: Bullet Spawn Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621735580788448887, guid: f0a39afabd378da4a8594c2550c4417a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

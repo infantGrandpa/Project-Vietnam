@@ -33,6 +33,8 @@ namespace ProjectVietnam
 
         public bool IsAtPosition(Vector3 targetPosition)
         {
+            if (myPath == null) return false;
+
             float distanceToTargetPosition = Vector3.Distance(transform.position, targetPosition);
             return distanceToTargetPosition <= myPath.endReachedDistance;
         }
