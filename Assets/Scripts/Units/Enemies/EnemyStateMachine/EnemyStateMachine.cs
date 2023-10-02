@@ -22,7 +22,13 @@ namespace ProjectVietnam
 
         private void GetNewInstructions()
         {
-            currentCommand = EnemyStatePlanner.Instance.GetNewCommand(enemyBehaviour);
+            EnemyCommand newCommand = EnemyStatePlanner.Instance.GetNewCommand(enemyBehaviour);
+
+            if (currentCommand == null || !currentCommand.Equals(newCommand))
+            {
+                currentCommand = newCommand;
+            }
+
             ExecuteCommand();
         }
 

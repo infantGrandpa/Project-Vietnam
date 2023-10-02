@@ -4954,9 +4954,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTestPosition: {x: -5, y: 0, z: 0}
   targetPatrolHome: {x: 5, y: 10.76, z: 0}
-  patrolRadius: 4
+  patrolRadius: 8
   secsToPatrolBeforeNewCommand: 4
-  skipMoveCommand: 0
+  skipMoveCommand: 1
 --- !u!1 &1157199497
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,5 +13,24 @@ namespace ProjectVietnam
             targetPosition = position;
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            EnemyCommand other = (EnemyCommand)obj;
+            bool isSameCommandType = commandType == other.commandType;
+            bool isSamePosition = targetPosition == other.targetPosition;
+
+            return isSameCommandType && isSamePosition;
+        }
+
+        public override int GetHashCode()
+        {
+            return commandType.GetHashCode() ^ targetPosition.GetHashCode();
+        }
+
     }
 }
