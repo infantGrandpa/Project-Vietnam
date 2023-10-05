@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ProjectVietnam
@@ -27,12 +28,15 @@ namespace ProjectVietnam
         public float patrolRadius;
         public float secsToPatrolBeforeNewCommand;
 
+        [Header("Zones of Interest")]
+        public List<EnemyZoneOfInterest> zonesOfInterest = new();
+
         [Header("Testing & Debugging")]
         [SerializeField] bool skipMoveCommand;
 
         public EnemyCommand GetNewCommand(EnemyBehaviour enemyToCommand)
         {
-            if (!skipMoveCommand && !enemyToCommand.IsAtPosition(targetTestPosition))
+            if (skipMoveCommand || enemyToCommand.IsAtPosition(targetTestPosition))
             {
                 return CreateMoveToTestPositionCommand();
             }
@@ -51,6 +55,8 @@ namespace ProjectVietnam
             EnemyCommand newCommand = new EnemyCommand(EnemyCommandType.patrol, targetPatrolHome);
             return newCommand;
         }
+
+        
 
         private void OnDrawGizmos()
         {
